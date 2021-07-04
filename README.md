@@ -1,4 +1,4 @@
-Depends On (run thesed first)
+Depends On (run these first)
 * docker
 
 Steps to run this project:
