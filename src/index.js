@@ -31,11 +31,11 @@ promoCodeGeneratorQueue.process(async (job, done) => {
             code,
             qrImage
         };
-
-        db().query('INSERT INTO items SET ?', data);
-    }));
-    console.log("queue done")
-    done();
+        
+        db().query('INSERT INTO items SET ?', data, function () {
+            console.log(`generate promocode code:${data.code} done`);
+        });
+    }))
 });
 
 app.post('/promocodes', async (req, res) => {
